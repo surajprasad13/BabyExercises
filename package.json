@@ -10,6 +10,8 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@react-native-async-storage/async-storage": "^1.15.11",
+    "@sentry/react-native": "^3.2.3",
     "react": "17.0.2",
     "react-native": "0.66.3",
     "react-native-actionsheet": "^2.4.2",
