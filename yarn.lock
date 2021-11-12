@@ -5429,7 +5429,7 @@ react-native-offline-api@^2.3.0:
     lodash.mapvalues "^4.6.0"
     lodash.merge "^4.6.0"
 
-react-native-orientation@^3.1.3, "react-native-orientation@git+https://github.com/yamill/react-native-orientation.git":
+"react-native-orientation@git+https://github.com/yamill/react-native-orientation.git":
   version "3.1.3"
   resolved "git+https://github.com/yamill/react-native-orientation.git#b45830cce0837fa668838554e023979497673c82"
 
