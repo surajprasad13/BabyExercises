@@ -351,6 +351,8 @@ PODS:
     - React-perflogger (= 0.66.3)
   - ReactNativeLocalization (2.1.7):
     - React-Core
+  - rn-fetch-blob (0.12.0):
+    - React-Core
   - RNDeviceInfo (8.4.6):
     - React-Core
   - RNLocalize (2.1.5):
@@ -422,6 +424,7 @@ DEPENDENCIES:
   - React-runtimeexecutor (from `../node_modules/react-native/ReactCommon/runtimeexecutor`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - ReactNativeLocalization (from `../node_modules/react-native-localization`)
+  - rn-fetch-blob (from `../node_modules/rn-fetch-blob`)
   - RNDeviceInfo (from `../node_modules/react-native-device-info`)
   - RNLocalize (from `../node_modules/react-native-localize`)
   - RNStoreReview (from `../node_modules/react-native-store-review/ios`)
@@ -515,6 +518,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon"
   ReactNativeLocalization:
     :path: "../node_modules/react-native-localization"
+  rn-fetch-blob:
+    :path: "../node_modules/rn-fetch-blob"
   RNDeviceInfo:
     :path: "../node_modules/react-native-device-info"
   RNLocalize:
@@ -574,6 +579,7 @@ SPEC CHECKSUMS:
   React-runtimeexecutor: bbbdb3d8fcf327c6e2249ee71b6ef1764b7dc266
   ReactCommon: 9bac022ab71596f2b0fde1268272543184c63971
   ReactNativeLocalization: 90a1181b7672309701dd7e5364fbf587319d41c6
+  rn-fetch-blob: f065bb7ab7fb48dd002629f8bdcb0336602d3cba
   RNDeviceInfo: d2df20ff25747778277a6aa8c749e8b53cf16a2a
   RNLocalize: 74b82db20cc3895ccc25af992c644879bcec2815
   RNStoreReview: d7d2a006e14030fe101cac9da487a17f98d73eff
