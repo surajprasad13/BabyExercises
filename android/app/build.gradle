@@ -83,7 +83,12 @@ project.ext.react = [
     enableHermes: false,  // clean and rebuild if changing
 ]
 
+project.ext.sentryCli = [
+    logLevel: "debug"
+]
+
 apply from: "../../node_modules/react-native/react.gradle"
+apply from: "../../node_modules/@sentry/react-native/sentry.gradle"
 
 /**
  * Set this to true to create two separate APKs instead of one:
@@ -136,7 +141,7 @@ android {
         configurations.all {
          resolutionStrategy { force 'androidx.core:core-ktx:1.6.0' }
         }
-        applicationId "com.babyexercises"
+        applicationId "dat1.videoplatform.android.babyapp"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

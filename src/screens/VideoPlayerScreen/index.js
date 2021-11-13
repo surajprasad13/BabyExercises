@@ -13,7 +13,7 @@ import Orientation from 'react-native-orientation-locker';
 
 class VideoPlayerScreen extends Component {
 
-    async componentWillMount() {
+    async UNSAFE_componentWillMount() {
         let params = this.props.navigation.state.params;
         this.setState({ videoPath: params.videoPath, video: params.video, isLoading: false });
         SystemSetting.setAppStore(true);

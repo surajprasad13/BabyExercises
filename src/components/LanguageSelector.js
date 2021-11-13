@@ -52,7 +52,7 @@ export default class LanguageSelector extends Component {
    *
    * @memberof LanguageSelector
    */
-  async componentWillMount() {
+  async UNSAFE_componentWillMount() {
     try {
       //Get languages
       let selected = JSON.parse(await AsyncStorage.getItem('SelectedLanguage'));

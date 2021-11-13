@@ -1,0 +1,6 @@
+<resources>
+    <color name="bgColor">#23475F</color>
+    <color name="colorPrimary">#81CEDB</color>
+    <color name="colorPrimaryDark">#23475F</color>
+    <color name="colorAccent">#C7819C</color>
+</resources>

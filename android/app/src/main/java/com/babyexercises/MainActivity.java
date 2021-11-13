@@ -1,4 +1,4 @@
-package com.babyexercises;
+package dat1.videoplatform.android.babyapp;
 
 import com.facebook.react.ReactActivity;
 import android.content.Intent;

@@ -28,7 +28,7 @@ class TextScreen extends Component {
     this.state = { isLoading: true }
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     const { state } = this.props.navigation;
     try {
       Data.getPage(CommonDataManager.getInstance().getSelectedLanguage().iso, state.params.page_id).then(data => {

@@ -102,7 +102,7 @@ export default class VideoSide extends Component {
    * @param {any} newProps
    * @memberof VideoSide
    */
-  componentWillReceiveProps(newProps) {
+  UNSAFE_componentWillReceiveProps(newProps) {
     this.setState({showModal: false});
   }
   /**

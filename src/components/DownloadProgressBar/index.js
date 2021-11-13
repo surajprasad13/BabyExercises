@@ -20,7 +20,7 @@ export default class DownloadProgressBar extends Component {
         this.startingNextDownloadListenerId = null;
     }
 
-    componentWillMount() {
+    UNSAFE_componentWillMount() {
         this.downloadProgressListenerId = global.events.addListener("download.progress", (progress) => {
             this.setState({ totalVideos: progress.total, downloadProgress: progress.percent });
         });

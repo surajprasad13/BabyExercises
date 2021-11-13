@@ -32,7 +32,7 @@ class TextAndImageScreen extends Component {
     this.setState({open: true});
   };
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     const {state} = this.props.navigation;
     try {
       Data.getPage(

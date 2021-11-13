@@ -45,7 +45,7 @@ const actionSheetStyles = {
 class VideoScreen extends Component {
   state = {downloadProgress: 0, isLoading: true, video: null, rate: 0};
 
-  async componentWillMount() {
+  async UNSAFE_componentWillMount() {
     let s = this.props.navigation.state.params.item;
     let iso = CommonDataManager.getInstance().getSelectedLanguage().iso;
     let videoData = await Data.getVideoData(iso, s.video_id); //for reload (language change)

@@ -22,7 +22,7 @@ export default class AppText extends Component {
         }
     }
 
-    componentWillReceiveProps(newProps) {
+    UNSAFE_componentWillReceiveProps(newProps) {
         if (newProps.style) {
             this.style = { ...this.staticStyle, ...newProps.style};
         }

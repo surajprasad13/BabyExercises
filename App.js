@@ -77,7 +77,7 @@ export default class Navigator extends Component {
    *
    * @memberof Navigator
    */
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     OneSignal.setLocationShared(false);
     OneSignal.setLogLevel(6, 0);
     OneSignal.setAppId('18e6b319-389c-48a1-988c-3063dfeca630');
@@ -107,6 +107,26 @@ export default class Navigator extends Component {
     //OneSignal.setNotificationWillShowInForegroundHandler(this.onReceived);
     //OneSignal.setInAppMessageClickHandler(this.onOpened);
     //OneSignal.addEventListener('ids', this.onIds);
+    OneSignal.promptForPushNotificationsWithUserResponse(response => {
+      console.log('Prompt response:', response);
+    });
+    OneSignal.setNotificationWillShowInForegroundHandler(
+      notificationReceivedEvent => {
+        console.log(
+          'OneSignal: notification will show in foreground:',
+          notificationReceivedEvent,
+        );
+        let notification = notificationReceivedEvent.getNotification();
+        console.log('notification: ', notification);
+        const data = notification.additionalData;
+        console.log('additionalData: ', data);
+        // Complete with null means don't show a notification.
+        notificationReceivedEvent.complete(notification);
+      },
+    );
+    OneSignal.setNotificationOpenedHandler(notification => {
+      console.log('OneSignal: notification opened:', notification);
+    });
   }
 
   componentWillUnmount() {

@@ -35,12 +35,12 @@ android_library(
 
 android_build_config(
     name = "build_config",
-    package = "com.babyexercises",
+    package = "dat1.videoplatform.android.babyapp",
 )
 
 android_resource(
     name = "res",
-    package = "com.babyexercises",
+    package = "dat1.videoplatform.android.babyapp",
     res = "src/main/res",
 )
 
