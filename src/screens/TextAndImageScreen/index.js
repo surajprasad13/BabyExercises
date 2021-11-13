@@ -29,7 +29,7 @@ import * as Sentry from '@sentry/react-native';
 import { isTablet } from "react-native-device-detection";
 import Hyperlink from "react-native-hyperlink";
 
-import Orientation from "react-native-orientation";
+import Orientation from "react-native-orientation-locker";
 
 class TextAndImageScreen extends Component {
   constructor(props) {

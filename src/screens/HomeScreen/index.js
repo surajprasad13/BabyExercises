@@ -20,7 +20,7 @@ import Config from '@config/Config';
 import Rating from '@library/Rating';
 import * as Sentry from '@sentry/react-native';
 import { isTablet } from 'react-native-device-detection';
-import Orientation from 'react-native-orientation';
+import Orientation from 'react-native-orientation-locker';
 
 
 class HomeScreen extends Component {

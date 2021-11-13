@@ -7,7 +7,7 @@ import { ActivityIndicator, Image, ImageBackground, TouchableWithoutFeedback, Vi
 import styles from './styles';
 import PayModal from '@components/PayModal';
 import Config from '@config/Config';
-import Orientation from 'react-native-orientation';
+import Orientation from 'react-native-orientation-locker';
 import Toast from 'react-native-simple-toast';
 
 export default class VideoSide extends Component {

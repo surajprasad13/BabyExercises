@@ -26,7 +26,7 @@ import Text from '@components/AppText';
 import Data from '@library/data';
 import DeviceInfo from 'react-native-device-info';
 import CommonDataManager from '@library/CommonDataManager';
-import Orientation from 'react-native-orientation';
+import Orientation from 'react-native-orientation-locker';
 
 import Config from '@config/Config';
 import {

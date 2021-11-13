@@ -8,7 +8,7 @@ import strings from '@config/strings';
 import Toast from 'react-native-simple-toast';
 import SystemSetting from 'react-native-system-setting';
 import Text from '@components/AppText';
-import Orientation from 'react-native-orientation';
+import Orientation from 'react-native-orientation-locker';
 
 
 class VideoPlayerScreen extends Component {
