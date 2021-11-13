@@ -1,13 +1,11 @@
-import styles from './styles';
-import React, {Component} from 'react';
-import {PixelRatio} from 'react-native';
+import React from 'react';
 
 import DeviceInfo from 'react-native-device-info';
 import MenuDrawer from '@components/MenuDrawer';
 import Text from '@components/AppText';
 import {withNavigationFocus} from 'react-navigation-is-focused-hoc';
 
-class TextScreen extends Component {
+class TextScreen extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -26,4 +24,4 @@ class TextScreen extends Component {
   }
 }
 
-export default withNavigationFocus(TextScreen);
+export default TextScreen;

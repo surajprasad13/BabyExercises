@@ -1,56 +1,47 @@
-import styles from "./styles";
-import React, { Component } from "react";
-import {
-  View,
-  Image,
-  Dimensions,
-  ScrollView,
-  ActivityIndicator,
-  Platform
-} from "react-native";
-import * as Animatable from "react-native-animatable";
+import styles from './styles';
+import React, {Component} from 'react';
+import {View, Image, ActivityIndicator, Platform} from 'react-native';
 
-import { withNavigation } from "react-navigation";
-
-import RadialGradient from "react-native-radial-gradient";
-import MenuDrawer from "@components/MenuDrawer";
-import Header from "@components/Header";
-import { withNavigationFocus } from "react-navigation-is-focused-hoc";
+//import RadialGradient from 'react-native-radial-gradient';
+import MenuDrawer from '@components/MenuDrawer';
+import Header from '@components/Header';
+import {withNavigationFocus} from 'react-navigation-is-focused-hoc';
 import HeaderImageScrollView, {
-  TriggeringView
-} from "react-native-image-header-scroll-view";
-import Text from "@components/AppText";
-import Data from "@library/data";
-import DeviceInfo from "react-native-device-info";
-import CommonDataManager from "@library/CommonDataManager";
-import Config from "@config/Config";
-import renderIf from "@tools/renderIf";
+  TriggeringView,
+} from 'react-native-image-header-scroll-view';
+import Text from '@components/AppText';
+import Data from '@library/data';
+import DeviceInfo from 'react-native-device-info';
+import CommonDataManager from '@library/CommonDataManager';
+import Config from '@config/Config';
+import renderIf from '@tools/renderIf';
 import * as Sentry from '@sentry/react-native';
-import { isTablet } from "react-native-device-detection";
-import Hyperlink from "react-native-hyperlink";
+import {isTablet} from 'react-native-device-detection';
+import Hyperlink from 'react-native-hyperlink';
+import Orientation from 'react-native-orientation-locker';
 
-import Orientation from "react-native-orientation-locker";
+import LinearGradient from 'react-native-linear-gradient';
 
 class TextAndImageScreen extends Component {
   constructor(props) {
     super(props);
-    this.state = { open: false, isLoading: true };
+    this.state = {open: false, isLoading: true};
   }
 
   openDrawer = () => {
-    this.setState({ open: true });
+    this.setState({open: true});
   };
 
   componentWillMount() {
-    const { state } = this.props.navigation;
+    const {state} = this.props.navigation;
     try {
       Data.getPage(
         CommonDataManager.getInstance().getSelectedLanguage().iso,
-        state.params.page_id
+        state.params.page_id,
       ).then(data => {
         this.setState({
           page: data.pages,
-          isLoading: false
+          isLoading: false,
         });
       });
     } catch (error) {
@@ -62,14 +53,14 @@ class TextAndImageScreen extends Component {
     Orientation.addOrientationListener(this._orientationDidChange);
   }
   _orientationDidChange = orientation => {
-    this.setState({ orientation: orientation }); //Just to rerender
+    this.setState({orientation: orientation}); //Just to rerender
   };
-  componentWillUnmount() {
+  UNSAFE_componentWillUnmount() {
     Orientation.removeOrientationListener(this._orientationDidChange);
   }
 
   render() {
-    const { params } = this.props.navigation.state;
+    const {params} = this.props.navigation.state;
 
     if (this.state.isLoading) {
       return <ActivityIndicator />;
@@ -86,7 +77,7 @@ class TextAndImageScreen extends Component {
             fadeOutForeground
             renderHeader={() => (
               <Image
-                source={{ uri: Config.URL + this.state.page.image }}
+                source={{uri: Config.URL + this.state.page.image}}
                 style={styles.image}
               />
             )}
@@ -110,15 +101,18 @@ class TextAndImageScreen extends Component {
               <View style={styles.titleContainer}>
                 {/* <Text style={styles.imageTitle}>    {this.state.page.title}</Text> */}
               </View>
-            )}
-          >
-            <RadialGradient
+            )}>
+            {/* <RadialGradient
               style={styles.contentContainer}
-              colors={["rgb(199,129,156)", "rgb(129,206,219)"]}
+              colors={['rgb(199,129,156)', 'rgb(129,206,219)']}
               center={[0, 0]}
-              minHeight={Dimensions.get("window").height}
-              radius={500}
-            >
+              minHeight={Dimensions.get('window').height}
+              radius={500}> */}
+            <LinearGradient
+              colors={['rgb(199,129,156)', 'rgb(129,206,219)']}
+              start={{x: 0, y: 0}}
+              end={{x: 0, y: 1}}
+              style={styles.contentContainer}>
               <TriggeringView
               // onHide={() => this.navTitleView.fadeInUp(200)}
               // onDisplay={() => this.navTitleView.fadeOut(100)}
@@ -131,30 +125,31 @@ class TextAndImageScreen extends Component {
                     <Text style={styles.paragraphs}>
                       {this.state.page.text}
                     </Text>
-                  </Hyperlink>
+                  </Hyperlink>,
                 )}
                 {renderIf(
                   !this.state.page.support,
-                  <Text style={styles.paragraphs}>{this.state.page.text}</Text>
+                  <Text style={styles.paragraphs}>{this.state.page.text}</Text>,
                 )}
 
                 {renderIf(
                   this.state.page.support,
                   <View style={styles.deviceInfo}>
-                    <Text style={{ color: "white" }}>
+                    <Text style={{color: 'white'}}>
                       App v. {DeviceInfo.getReadableVersion()}
                     </Text>
-                    <Text style={{ color: "white" }}>
-                      OS: {DeviceInfo.getSystemName()}{" "}
-                      {DeviceInfo.getSystemVersion()}{" "}
+                    <Text style={{color: 'white'}}>
+                      OS: {DeviceInfo.getSystemName()}{' '}
+                      {DeviceInfo.getSystemVersion()}{' '}
                     </Text>
-                    <Text style={{ color: "white" }}>
-                      UID: {DeviceInfo.getUniqueId()}{" "}
+                    <Text style={{color: 'white'}}>
+                      UID: {DeviceInfo.getUniqueId()}{' '}
                     </Text>
-                  </View>
+                  </View>,
                 )}
               </View>
-            </RadialGradient>
+              {/* </RadialGradient> */}
+            </LinearGradient>
           </HeaderImageScrollView>
         </View>
       </MenuDrawer>
@@ -162,4 +157,4 @@ class TextAndImageScreen extends Component {
   }
 }
 
-export default withNavigationFocus(TextAndImageScreen);
+export default TextAndImageScreen;

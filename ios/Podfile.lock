@@ -381,8 +381,6 @@ PODS:
   - Sentry (7.5.1):
     - Sentry/Core (= 7.5.1)
   - Sentry/Core (7.5.1)
-  - SRSRadialGradient (1.0.9):
-    - React
   - Toast (4.0.0)
   - Yoga (1.14.0)
   - YogaKit (1.18.1):
@@ -458,7 +456,6 @@ DEPENDENCIES:
   - RNStoreReview (from `../node_modules/react-native-store-review/ios`)
   - RNSVG (from `../node_modules/react-native-svg`)
   - RNVectorIcons (from `../node_modules/react-native-vector-icons`)
-  - SRSRadialGradient (from `../node_modules/react-native-radial-gradient/ios`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
@@ -574,8 +571,6 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-svg"
   RNVectorIcons:
     :path: "../node_modules/react-native-vector-icons"
-  SRSRadialGradient:
-    :path: "../node_modules/react-native-radial-gradient/ios"
   Yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
@@ -641,7 +636,6 @@ SPEC CHECKSUMS:
   RNSVG: 551acb6562324b1d52a4e0758f7ca0ec234e278f
   RNVectorIcons: 4143ba35feebab8fdbe6bc43d1e776b393d47ac8
   Sentry: 0718c3ad7a08e1107599610795adaf08864102f3
-  SRSRadialGradient: 49ba49a7a8f257c3fe785c250867b07185d1d01e
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
   Yoga: 32a18c0e845e185f4a2a66ec76e1fd1f958f22fa
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a

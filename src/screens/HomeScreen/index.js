@@ -12,7 +12,6 @@ import {
   Alert,
   Platform,
 } from 'react-native';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import {withNavigationFocus} from 'react-navigation-is-focused-hoc';
 import MenuDrawer from '@components/MenuDrawer';
 import Data from '@library/data';
@@ -41,7 +40,7 @@ class HomeScreen extends Component {
     return styles;
   }
 
-  async componentWillMount() {
+  async UNSAFE_componentWillMount() {
     Rating(); //Does not show everytime (build in counter)
     this.getData();
 
