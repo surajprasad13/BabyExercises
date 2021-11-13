@@ -1,3 +1,7 @@
 {
-    "name": "@screens" 
- }
+    "name": "@screens",
+    "devDependencies": {
+        "@types/react": "^17.0.34",
+        "@types/react-native": "^0.66.4"
+    }
+}

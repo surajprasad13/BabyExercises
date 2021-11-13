@@ -1,112 +1,191 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
+import React, {Component} from 'react';
+import {Alert} from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import {updateFocus} from 'react-navigation-is-focused-hoc';
 
-import React from 'react';
-import type {Node} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+import {StackNavigator} from 'react-navigation';
+import HomeScreen from '@screens/HomeScreen';
+import TextAndImageScreen from '@screens/TextAndImageScreen';
+import SupportScreen from '@screens/SupportScreen';
+import CategoryScreen from '@screens/CategoryScreen';
+import TextScreen from '@screens/TextScreen';
+import VideoScreen from '@screens/VideoScreen';
+import SplashScreen from '@screens/SplashScreen';
+import TermsAndConditionsScreen from '@screens/TermsAndConditionsScreen';
+import RecommendScreen from '@screens/RecommendScreen';
+import VideoPlayerScreen from '@screens/VideoPlayerScreen';
+import strings from '@config/strings';
+import OneSignal from 'react-native-onesignal';
+import CommonDataManager from '@library/CommonDataManager';
+import Data from '@library/data';
+import Events from '@library/events';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+import * as Sentry from '@sentry/react-native';
 
-const Section = ({children, title}): Node => {
-  const isDarkMode = useColorScheme() === 'dark';
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-};
+// Sentry.config('https://3debc44ec11d4821a4eece1dc3ec7228@o151116.ingest.sentry.io/1202209').install();
 
-const App: () => Node = () => {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
-  return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.js</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
-  );
-};
-
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
+Sentry.init({
+  enableNative: false,
+  dsn: 'https://3debc44ec11d4821a4eece1dc3ec7228:22d6907b6fa5438dbda1650efac77d70@sentry.io/1202209',
 });
 
-export default App;
+global.events = new Events();
+
+const RootStack = StackNavigator(
+  {
+    Home: {
+      screen: HomeScreen,
+    },
+    TextAndImage: {
+      screen: TextAndImageScreen,
+    },
+    Support: {
+      screen: SupportScreen,
+    },
+    Category: {
+      screen: CategoryScreen,
+    },
+    Text: {
+      screen: TextScreen,
+    },
+    Video: {
+      screen: VideoScreen,
+    },
+    Recommend: {
+      screen: RecommendScreen,
+    },
+    VideoPlayer: {
+      screen: VideoPlayerScreen,
+    },
+  },
+  {
+    initialRouteName: 'Home',
+    navigationOptions: {
+      header: null,
+    },
+  },
+);
+
+export default class Navigator extends Component {
+  state = {
+    isLoading: true,
+    termsAccepted: false,
+  };
+
+  /**
+   * Gets the languages
+   *
+   * @memberof Navigator
+   */
+  componentWillMount() {
+    OneSignal.setLocationShared(false);
+    OneSignal.setLogLevel(6, 0);
+    OneSignal.setAppId('18e6b319-389c-48a1-988c-3063dfeca630');
+    this.setup();
+  }
+
+  async setup() {
+    const terms = await AsyncStorage.getItem('termsAccepted');
+    this.setState({termsAccepted: JSON.parse(terms)});
+
+    try {
+      //Get languages
+      Data.getLanguages().then(data => {
+        this.setState({
+          languages: data.languages,
+        });
+        this.setInitialLanguage();
+      });
+    } catch (error) {
+      console.log(error);
+      Sentry.captureMessage(error);
+      Alert.alert(strings.error, strings.errorMsg);
+    }
+  }
+
+  componentDidMount() {
+    //OneSignal.setNotificationWillShowInForegroundHandler(this.onReceived);
+    //OneSignal.setInAppMessageClickHandler(this.onOpened);
+    //OneSignal.addEventListener('ids', this.onIds);
+  }
+
+  componentWillUnmount() {
+    //OneSignal.clearHandlers();
+  }
+
+  // onReceived(notification) {
+  //   console.log('Notification received: ', notification);
+  // }
+
+  // onOpened(openResult) {
+  //   console.log('Message: ', openResult.notification.payload.body);
+  //   console.log('Data: ', openResult.notification.payload.additionalData);
+  //   console.log('isActive: ', openResult.notification.isAppInFocus);
+  //   console.log('openResult: ', openResult);
+  // }
+
+  // async onIds(device) {
+  //   console.log('Device info: ', device);
+  // }
+
+  /**
+   * Gets selected language from Async storage and sets it.
+   *
+   * @memberof Navigator
+   */
+  setInitialLanguage() {
+    try {
+      AsyncStorage.getItem('SelectedLanguage').then(value => {
+        if (value == null) {
+          //Initial
+          value = JSON.stringify(
+            this.state.languages.find(x => x.iso === 'en'),
+          );
+        }
+        let selected = JSON.parse(value);
+        CommonDataManager.getInstance().setSelectedLanguage(selected);
+        this.setState({
+          isLoading: false,
+        });
+      });
+    } catch (error) {
+      Alert.alert(strings.error, strings.errorMsg);
+      Sentry.captureMessage(error);
+    }
+  }
+
+  /**
+   * Terms accepted
+   *
+   * @memberof Navigator
+   */
+  acceptTerms() {
+    this.setState({termsAccepted: true});
+  }
+
+  /**
+   * Render appropiate screen
+   *
+   * @returns
+   * @memberof Navigator
+   */
+  render() {
+    if (this.state.isLoading) {
+      return <SplashScreen />;
+    }
+
+    if (!this.state.termsAccepted) {
+      return (
+        <TermsAndConditionsScreen acceptTerms={this.acceptTerms.bind(this)} />
+      );
+    }
+
+    return (
+      <RootStack
+        onNavigationStateChange={(prevState, currentState) => {
+          updateFocus(currentState);
+        }}
+      />
+    );
+  }
+}

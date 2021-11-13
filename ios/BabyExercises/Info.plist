@@ -55,6 +55,8 @@
 		<string>Octicons.ttf</string>
 		<string>SimpleLineIcons.ttf</string>
 		<string>Zocial.ttf</string>
+		<string>Soho Gothic Pro.otf</string>
+		<string>Soho Gothic Pro Medium.otf</string>
 	</array>
 	<key>UIBackgroundModes</key>
 	<array>

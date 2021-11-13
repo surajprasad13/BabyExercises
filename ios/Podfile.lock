@@ -363,6 +363,8 @@ PODS:
     - React-Core
   - RNDeviceInfo (8.4.6):
     - React-Core
+  - RNGestureHandler (1.10.3):
+    - React-Core
   - RNIap (7.5.0):
     - React-Core
   - RNLocalize (2.1.5):
@@ -372,11 +374,15 @@ PODS:
     - Sentry (= 7.5.1)
   - RNStoreReview (0.2.0):
     - React-Core
+  - RNSVG (12.1.1):
+    - React
   - RNVectorIcons (9.0.0):
     - React-Core
   - Sentry (7.5.1):
     - Sentry/Core (= 7.5.1)
   - Sentry/Core (7.5.1)
+  - SRSRadialGradient (1.0.9):
+    - React
   - Toast (4.0.0)
   - Yoga (1.14.0)
   - YogaKit (1.18.1):
@@ -445,11 +451,14 @@ DEPENDENCIES:
   - rn-fetch-blob (from `../node_modules/rn-fetch-blob`)
   - "RNCAsyncStorage (from `../node_modules/@react-native-async-storage/async-storage`)"
   - RNDeviceInfo (from `../node_modules/react-native-device-info`)
+  - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
   - RNIap (from `../node_modules/react-native-iap`)
   - RNLocalize (from `../node_modules/react-native-localize`)
   - "RNSentry (from `../node_modules/@sentry/react-native`)"
   - RNStoreReview (from `../node_modules/react-native-store-review/ios`)
+  - RNSVG (from `../node_modules/react-native-svg`)
   - RNVectorIcons (from `../node_modules/react-native-vector-icons`)
+  - SRSRadialGradient (from `../node_modules/react-native-radial-gradient/ios`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
@@ -551,6 +560,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/@react-native-async-storage/async-storage"
   RNDeviceInfo:
     :path: "../node_modules/react-native-device-info"
+  RNGestureHandler:
+    :path: "../node_modules/react-native-gesture-handler"
   RNIap:
     :path: "../node_modules/react-native-iap"
   RNLocalize:
@@ -559,8 +570,12 @@ EXTERNAL SOURCES:
     :path: "../node_modules/@sentry/react-native"
   RNStoreReview:
     :path: "../node_modules/react-native-store-review/ios"
+  RNSVG:
+    :path: "../node_modules/react-native-svg"
   RNVectorIcons:
     :path: "../node_modules/react-native-vector-icons"
+  SRSRadialGradient:
+    :path: "../node_modules/react-native-radial-gradient/ios"
   Yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
@@ -618,16 +633,19 @@ SPEC CHECKSUMS:
   rn-fetch-blob: f065bb7ab7fb48dd002629f8bdcb0336602d3cba
   RNCAsyncStorage: eb05c0284dd6b50b32f92fad55e2a41e03358c43
   RNDeviceInfo: d2df20ff25747778277a6aa8c749e8b53cf16a2a
+  RNGestureHandler: a479ebd5ed4221a810967000735517df0d2db211
   RNIap: f632e0685e37759e1a63651868d38fd08efe9a87
   RNLocalize: 74b82db20cc3895ccc25af992c644879bcec2815
   RNSentry: 97bc62fa65b7d663daee16fbf9771470852217cf
   RNStoreReview: d7d2a006e14030fe101cac9da487a17f98d73eff
+  RNSVG: 551acb6562324b1d52a4e0758f7ca0ec234e278f
   RNVectorIcons: 4143ba35feebab8fdbe6bc43d1e776b393d47ac8
   Sentry: 0718c3ad7a08e1107599610795adaf08864102f3
+  SRSRadialGradient: 49ba49a7a8f257c3fe785c250867b07185d1d01e
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
   Yoga: 32a18c0e845e185f4a2a66ec76e1fd1f958f22fa
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-PODFILE CHECKSUM: 2d5d01d97e1ea785581ee350eb84b7d34a0985c2
+PODFILE CHECKSUM: 9d29e73d54a7e51c849d39bac72fa3dd77f7938a
 
 COCOAPODS: 1.11.2

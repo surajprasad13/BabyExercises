@@ -6,8 +6,8 @@ import {
     Image,
     ScrollView,
     Alert,
-    AsyncStorage,
 } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage'
 import Modal from "react-native-modal";
 import Text from '@components/AppText';
 import * as RNIap from 'react-native-iap';
