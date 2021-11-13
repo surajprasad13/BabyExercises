@@ -75,6 +75,7 @@ PODS:
   - fmt (6.2.1)
   - glog (0.3.5)
   - libevent (2.1.12)
+  - OneSignalXCFramework (3.8.1)
   - OpenSSL-Universal (1.1.180)
   - RCT-Folly (2021.06.28.00-v2):
     - boost
@@ -276,6 +277,9 @@ PODS:
   - React-jsinspector (0.66.3)
   - React-logger (0.66.3):
     - glog
+  - react-native-onesignal (4.3.2):
+    - OneSignalXCFramework (= 3.8.1)
+    - React (< 1.0.0, >= 0.13.0)
   - react-native-simple-toast (1.1.3):
     - React-Core
     - Toast (~> 4.0.0)
@@ -417,6 +421,7 @@ DEPENDENCIES:
   - React-jsiexecutor (from `../node_modules/react-native/ReactCommon/jsiexecutor`)
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
   - React-logger (from `../node_modules/react-native/ReactCommon/logger`)
+  - react-native-onesignal (from `../node_modules/react-native-onesignal`)
   - react-native-simple-toast (from `../node_modules/react-native-simple-toast`)
   - react-native-video (from `../node_modules/react-native-video`)
   - React-perflogger (from `../node_modules/react-native/ReactCommon/reactperflogger`)
@@ -455,6 +460,7 @@ SPEC REPOS:
     - FlipperKit
     - fmt
     - libevent
+    - OneSignalXCFramework
     - OpenSSL-Universal
     - Sentry
     - Toast
@@ -499,6 +505,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/jsinspector"
   React-logger:
     :path: "../node_modules/react-native/ReactCommon/logger"
+  react-native-onesignal:
+    :path: "../node_modules/react-native-onesignal"
   react-native-simple-toast:
     :path: "../node_modules/react-native-simple-toast"
   react-native-video:
@@ -565,6 +573,7 @@ SPEC CHECKSUMS:
   fmt: ff9d55029c625d3757ed641535fd4a75fedc7ce9
   glog: 5337263514dd6f09803962437687240c5dc39aa4
   libevent: 4049cae6c81cdb3654a443be001fb9bdceff7913
+  OneSignalXCFramework: cd6290d43d4f7dd0443d34e7be8b95996417644e
   OpenSSL-Universal: 1aa4f6a6ee7256b83db99ec1ccdaa80d10f9af9b
   RCT-Folly: a21c126816d8025b547704b777a2ba552f3d9fa9
   RCTRequired: 59d2b744d8c2bf2d9bc7032a9f654809adcf7d50
@@ -579,6 +588,7 @@ SPEC CHECKSUMS:
   React-jsiexecutor: 433a691aee158533a6a6ee9c86cb4a1684fa2853
   React-jsinspector: d9c8eb0b53f0da206fed56612b289fec84991157
   React-logger: e522e76fa3e9ec3e7d7115b49485cc065cf4ae06
+  react-native-onesignal: 9722e22583424e35ec9d56487f2601e677328744
   react-native-simple-toast: bf002828cf816775a6809f7a9ec3907509bce11f
   react-native-video: a4c2635d0802f983594b7057e1bce8f442f0ad28
   React-perflogger: 73732888d37d4f5065198727b167846743232882

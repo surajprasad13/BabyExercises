@@ -30,6 +30,7 @@
     "react-native-modal": "^13.0.0",
     "react-native-modal-dropdown": "^1.0.2",
     "react-native-offline-api": "^2.3.0",
+    "react-native-onesignal": "^4.3.2",
     "react-native-progress": "^5.0.0",
     "react-native-rating-requestor": "^4.2.0",
     "react-native-side-menu": "^1.1.3",
