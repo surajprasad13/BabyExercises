@@ -11,6 +11,8 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		27B3C95F273F619100D1FC39 /* Soho Gothic Pro Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 27B3C95D273F619000D1FC39 /* Soho Gothic Pro Medium.otf */; };
+		27B3C960273F619100D1FC39 /* Soho Gothic Pro.otf in Resources */ = {isa = PBXBuildFile; fileRef = 27B3C95E273F619100D1FC39 /* Soho Gothic Pro.otf */; };
 		7F83AC019106A4223433772C /* libPods-BabyExercises.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C82F7AAEBF8C8B49FBA6B402 /* libPods-BabyExercises.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		AEBF556D3CB6FA4BFBF8AA4B /* libPods-BabyExercises-BabyExercisesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A7E61C83265C8526A96BFC12 /* libPods-BabyExercises-BabyExercisesTests.a */; };
@@ -37,6 +39,8 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = BabyExercises/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = BabyExercises/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = BabyExercises/main.m; sourceTree = "<group>"; };
+		27B3C95D273F619000D1FC39 /* Soho Gothic Pro Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Soho Gothic Pro Medium.otf"; path = "../android/app/src/main/assets/fonts/Soho Gothic Pro Medium.otf"; sourceTree = "<group>"; };
+		27B3C95E273F619100D1FC39 /* Soho Gothic Pro.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Soho Gothic Pro.otf"; path = "../android/app/src/main/assets/fonts/Soho Gothic Pro.otf"; sourceTree = "<group>"; };
 		27EE9551273ECB7C00FA12B2 /* BabyExercises.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = BabyExercises.entitlements; path = BabyExercises/BabyExercises.entitlements; sourceTree = "<group>"; };
 		2D72FD19A755B36E04D9F131 /* Pods-BabyExercises.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BabyExercises.release.xcconfig"; path = "Target Support Files/Pods-BabyExercises/Pods-BabyExercises.release.xcconfig"; sourceTree = "<group>"; };
 		5F97EC44C0F5A74D28AE1E49 /* Pods-BabyExercises-BabyExercisesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BabyExercises-BabyExercisesTests.release.xcconfig"; path = "Target Support Files/Pods-BabyExercises-BabyExercisesTests/Pods-BabyExercises-BabyExercisesTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -111,6 +115,8 @@
 		70F03150428F44F4A3BCF778 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				27B3C95D273F619000D1FC39 /* Soho Gothic Pro Medium.otf */,
+				27B3C95E273F619100D1FC39 /* Soho Gothic Pro.otf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -252,7 +258,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27B3C95F273F619100D1FC39 /* Soho Gothic Pro Medium.otf in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
+				27B3C960273F619100D1FC39 /* Soho Gothic Pro.otf in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

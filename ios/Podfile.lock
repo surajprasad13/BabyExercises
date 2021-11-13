@@ -361,6 +361,8 @@ PODS:
     - React-Core
   - RNDeviceInfo (8.4.6):
     - React-Core
+  - RNIap (7.5.0):
+    - React-Core
   - RNLocalize (2.1.5):
     - React-Core
   - RNSentry (3.2.3):
@@ -440,6 +442,7 @@ DEPENDENCIES:
   - rn-fetch-blob (from `../node_modules/rn-fetch-blob`)
   - "RNCAsyncStorage (from `../node_modules/@react-native-async-storage/async-storage`)"
   - RNDeviceInfo (from `../node_modules/react-native-device-info`)
+  - RNIap (from `../node_modules/react-native-iap`)
   - RNLocalize (from `../node_modules/react-native-localize`)
   - "RNSentry (from `../node_modules/@sentry/react-native`)"
   - RNStoreReview (from `../node_modules/react-native-store-review/ios`)
@@ -543,6 +546,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/@react-native-async-storage/async-storage"
   RNDeviceInfo:
     :path: "../node_modules/react-native-device-info"
+  RNIap:
+    :path: "../node_modules/react-native-iap"
   RNLocalize:
     :path: "../node_modules/react-native-localize"
   RNSentry:
@@ -607,6 +612,7 @@ SPEC CHECKSUMS:
   rn-fetch-blob: f065bb7ab7fb48dd002629f8bdcb0336602d3cba
   RNCAsyncStorage: eb05c0284dd6b50b32f92fad55e2a41e03358c43
   RNDeviceInfo: d2df20ff25747778277a6aa8c749e8b53cf16a2a
+  RNIap: f632e0685e37759e1a63651868d38fd08efe9a87
   RNLocalize: 74b82db20cc3895ccc25af992c644879bcec2815
   RNSentry: 97bc62fa65b7d663daee16fbf9771470852217cf
   RNStoreReview: d7d2a006e14030fe101cac9da487a17f98d73eff
