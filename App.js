@@ -77,11 +77,13 @@ export default class Navigator extends Component {
    *
    * @memberof Navigator
    */
-  UNSAFE_componentWillMount() {
+  async UNSAFE_componentWillMount() {
+    OneSignal.setAppId('18e6b319-389c-48a1-988c-3063dfeca630');
+    const id = await OneSignal.getDeviceState();
     OneSignal.setLocationShared(false);
     OneSignal.setLogLevel(6, 0);
-    OneSignal.setAppId('18e6b319-389c-48a1-988c-3063dfeca630');
     this.setup();
+    console.log(id, 'OneSignal');
   }
 
   async setup() {

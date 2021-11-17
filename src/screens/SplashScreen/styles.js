@@ -1,9 +1,9 @@
 export default {
   container: {
-    flex: 1, 
+    flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#23475f'
+    backgroundColor: '#23475f',
   },
   baby: {
     resizeMode: 'contain',
@@ -13,5 +13,4 @@ export default {
     fontSize: 20,
     marginTop: 20,
   },
-
 };

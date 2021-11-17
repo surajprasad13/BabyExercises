@@ -3,6 +3,8 @@
 <plist version="1.0">
 <dict>
 	<key>com.apple.security.application-groups</key>
-	<array/>
+	<array>
+		<string>group.dat1.videoplatform.ios.babyapp.onesignal</string>
+	</array>
 </dict>
 </plist>

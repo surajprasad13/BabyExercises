@@ -1,11 +1,4 @@
 import strings from '@config/strings';
-import {
-  StyleSheet,
-  View,
-  ActivityIndicator,
-  TouchableOpacity,
-  Image,
-} from 'react-native';
 
 export default class CommonDataManager {
   static myInstance = null;

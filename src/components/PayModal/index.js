@@ -39,6 +39,11 @@ class PayModal extends Component {
    *
    * @memberof PayModal
    */
+
+  async componentDidMount() {
+    await RNIap.initConnection();
+  }
+
   async UNSAFE_componentWillMount() {
     //Gets products from API
     let cats = await Data.getCategories(
@@ -48,7 +53,6 @@ class PayModal extends Component {
     this.setState({categories: cats.categories});
     Sentry.set;
     try {
-      await RNIap.initConnection();
       ids.push(Config.AllVideoID);
       const products = await RNIap.getProducts(ids);
       this.setState({skus: Array.from(products)});
@@ -236,23 +240,26 @@ class PayModal extends Component {
    * @memberof PayModal
    */
   async buyProduct(id) {
-    OneSignal.sendTags({have_paid: 'true', last_item: id});
-    RNIap.buyProduct(id)
-      .then(purchase => {
-        Toast.show(strings.successBuy, Toast.LONG);
+    // OneSignal.sendTags({have_paid: 'true', last_item: id});
+    // RNIap.getProducts(id)
+    //   .then(purchase => {
+    //     Toast.show(strings.successBuy, Toast.LONG);
+    //     Sentry.captureMessage('Bought:');
+    //     Sentry.captureMessage(JSON.stringify(purchase));
+    //     Sentry.captureMessage(id);
+    //     this.setNewPurchase(id);
+    //     this.reloadScreen();
+    //   })
+    //   .catch(err => {
+    //     if (err.code != 'E_USER_CANCELLED') {
+    //       Alert.alert(strings.error, strings.unableToBuyText);
+    //       Sentry.captureMessage(err);
+    //     }
+    //   });
+    // const product = await RNIap.getProducts(id);
+    // console.log(product);
 
-        Sentry.captureMessage('Bought:');
-        Sentry.captureMessage(JSON.stringify(purchase));
-        Sentry.captureMessage(id);
-        this.setNewPurchase(id);
-        this.reloadScreen();
-      })
-      .catch(err => {
-        if (err.code != 'E_USER_CANCELLED') {
-          Alert.alert(strings.error, strings.unableToBuyText);
-          Sentry.captureMessage(err);
-        }
-      });
+    await RNIap.requestPurchase(id);
   }
   /**
    * Sets a product in the state, and asyncstorage

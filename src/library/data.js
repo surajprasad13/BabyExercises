@@ -101,9 +101,7 @@ export default class Data {
    * @memberof Data
    */
   static async getLanguages() {
-    console.log(api);
     const som = await api.fetch('languages');
-    console.log('after');
     return som;
   }
   /**

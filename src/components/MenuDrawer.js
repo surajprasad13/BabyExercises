@@ -92,6 +92,7 @@ class MenuDrawer extends Component {
           colors={['rgb(199,129,156)', 'rgb(129,206,219)']}
           start={{x: 0, y: 0}}
           end={{x: 0, y: 1}}
+          locations={[0, 0.5]}
           style={{flex: 1}}>
           {this.props.hideHeader != true && (
             <Header openDrawer={this.open.bind(this)} />
