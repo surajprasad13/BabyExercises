@@ -1,4 +1,4 @@
-import { isTablet } from 'react-native-device-detection';
+import {isTablet} from 'react-native-device-detection';
 
 export default {
   container: {
@@ -36,5 +36,4 @@ export default {
   deviceInfo: {
     marginTop: 30,
   },
-
 };

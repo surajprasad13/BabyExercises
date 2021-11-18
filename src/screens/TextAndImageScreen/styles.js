@@ -1,7 +1,6 @@
-import { isTablet } from 'react-native-device-detection';
+import {isTablet} from 'react-native-device-detection';
 
 export default {
-
   container: {
     flex: 1,
   },
@@ -33,7 +32,8 @@ export default {
     alignItems: 'center',
   },
   icon: {
-    width: 32, height: 32,
+    width: 32,
+    height: 32,
   },
   contentContainer: {
     padding: 20,
@@ -54,5 +54,5 @@ export default {
   },
   headline: {
     fontSize: 18,
-  }
+  },
 };

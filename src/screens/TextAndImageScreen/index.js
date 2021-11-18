@@ -11,7 +11,6 @@ import {
 //import RadialGradient from 'react-native-radial-gradient';
 import MenuDrawer from '@components/MenuDrawer';
 import Header from '@components/Header';
-import {withNavigationFocus} from 'react-navigation-is-focused-hoc';
 import HeaderImageScrollView, {
   TriggeringView,
 } from 'react-native-image-header-scroll-view';

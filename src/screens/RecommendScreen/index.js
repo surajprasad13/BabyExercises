@@ -126,9 +126,7 @@ class RecommendScreen extends React.Component {
             renderTouchableFixedForeground={() => (
               <Header openDrawer={this.openDrawer.bind(this)} />
             )}
-            renderForeground={() => (
-              <View style={styles.titleContainer}></View>
-            )}>
+            renderForeground={() => <View style={styles.titleContainer} />}>
             <ScrollView scrollIndicatorInsets={{right: 1}}>
               {/* <RadialGradient
                 style={styles.contentContainer}
@@ -141,7 +139,7 @@ class RecommendScreen extends React.Component {
                 start={{x: 0, y: 0}}
                 end={{x: 0, y: 1}}
                 style={{minHeight: Dimensions.get('window').height}}>
-                <TriggeringView></TriggeringView>
+                <TriggeringView />
                 <View style={styles.innerContainer}>
                   <TouchableWithoutFeedback onPress={this.openLink}>
                     <View style={styles.linkBox}>

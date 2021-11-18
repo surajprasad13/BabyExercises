@@ -8,28 +8,6 @@ import Header from './Header';
 import {isTablet} from 'react-native-device-detection';
 import LinearGradient from 'react-native-linear-gradient';
 
-const styles = StyleSheet.create({
-  container: {
-    padding: 20,
-    height: 50,
-    padding: 0,
-  },
-  innerContainer: {
-    flex: 1,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-  },
-  icon: {
-    width: 32,
-    height: 32,
-    alignSelf: 'flex-end',
-  },
-  title: {
-    textAlign: 'center',
-  },
-});
-
 const drawerStyles = {
   drawer: {shadowColor: '#000000', shadowOpacity: 0.8, shadowRadius: 3},
 };

@@ -77,7 +77,6 @@ export default class Navigator extends Component {
    */
   async UNSAFE_componentWillMount() {
     OneSignal.setAppId('18e6b319-389c-48a1-988c-3063dfeca630');
-    const id = await OneSignal.getDeviceState();
     OneSignal.setLocationShared(false);
     OneSignal.setLogLevel(6, 0);
     this.setup();
@@ -116,7 +115,6 @@ export default class Navigator extends Component {
         // );
         let notification = notificationReceivedEvent.getNotification();
         //console.log('notification: ', notification);
-        const data = notification.additionalData;
         //console.log('additionalData: ', data);
         // Complete with null means don't show a notification.
         notificationReceivedEvent.complete(notification);

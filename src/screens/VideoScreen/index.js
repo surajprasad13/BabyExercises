@@ -32,13 +32,11 @@ import Toast from 'react-native-simple-toast';
 const actionSheetStyles = {
   buttonText: {
     fontFamily: 'Soho Gothic Pro',
+    fontSize: 16,
+    textAlign: 'center',
   },
   titleText: {
     fontFamily: 'Soho Gothic Pro',
-  },
-  buttonText: {
-    fontSize: 16,
-    textAlign: 'center',
   },
 };
 

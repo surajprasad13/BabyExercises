@@ -1,5 +1,5 @@
-import { Platform } from 'react-native';
-import { isTablet } from 'react-native-device-detection';
+import {Platform} from 'react-native';
+import {isTablet} from 'react-native-device-detection';
 
 export default {
   container: {
@@ -36,8 +36,5 @@ export default {
   switch: {
     alignSelf: 'flex-start',
     marginBottom: 50,
-
   },
-
-
 };

@@ -65,7 +65,7 @@ class Menu extends React.Component {
               />
             </TouchableWithoutFeedback>
           </View>
-          <Text style={styles.menuHeader}></Text>
+          <Text style={styles.menuHeader} />
 
           {this.renderMenuItem('Home', homePageData)}
 
@@ -87,7 +87,7 @@ class Menu extends React.Component {
             </TouchableOpacity>
           </View>
 
-          <View style={styles.border}></View>
+          <View style={styles.border} />
           <Image
             source={require('./../../../assets/baby.png')}
             style={styles.baby}

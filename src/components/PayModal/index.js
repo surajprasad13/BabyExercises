@@ -246,7 +246,7 @@ class PayModal extends Component {
           OneSignal.sendTags({have_paid: 'true', last_item: id});
           Toast.show(strings.successBuy, Toast.LONG);
           Sentry.captureMessage('Bought:');
-          Sentry.captureMessage(JSON.stringify(purchase));
+          Sentry.captureMessage(JSON.stringify(id));
           Sentry.captureMessage(id);
           this.setNewPurchase(id);
           this.reloadScreen();
