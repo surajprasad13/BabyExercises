@@ -259,7 +259,15 @@ class PayModal extends Component {
     // const product = await RNIap.getProducts(id);
     // console.log(product);
 
-    await RNIap.requestPurchase(id);
+    try {
+      await RNIap.requestPurchase(id)
+        .then(data => console.log(data))
+        .catch(error => {
+          console.log(error);
+        });
+    } catch (error) {
+      console.log(error);
+    }
   }
   /**
    * Sets a product in the state, and asyncstorage

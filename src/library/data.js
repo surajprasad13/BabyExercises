@@ -60,10 +60,10 @@ async function authMiddleware(serviceDefinition, serviceOptions) {
 
   token = authToken;
   if (authToken == null) {
-    console.log('token null');
+    //console.log('token null');
     try {
       let data = {email: 'app@app.app', password: 'appapp'};
-      console.log('bef');
+
       // const authData = await loginApi.post('login', { fetchOptions: { body: JSON.stringify(data) } });
       // Somehow the offline API didn't work unless inspecting network data
       let response = await fetch(`${Config.API_URL}/login`, {
@@ -77,15 +77,14 @@ async function authMiddleware(serviceDefinition, serviceOptions) {
           password: 'appapp',
         }),
       });
-      console.log('res', response);
+
       let authData = await response.json();
 
-      console.log('authData', authData);
       authToken = authData.token;
       AsyncStorage.setItem('token', authToken);
       return {headers: {Authorization: 'Bearer ' + authToken}};
     } catch (err) {
-      console.log(err);
+      throw err;
     }
   }
 

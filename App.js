@@ -22,8 +22,6 @@ import Events from '@library/events';
 
 import * as Sentry from '@sentry/react-native';
 
-// Sentry.config('https://3debc44ec11d4821a4eece1dc3ec7228@o151116.ingest.sentry.io/1202209').install();
-
 Sentry.init({
   enableNative: false,
   dsn: 'https://3debc44ec11d4821a4eece1dc3ec7228:22d6907b6fa5438dbda1650efac77d70@sentry.io/1202209',
@@ -83,7 +81,6 @@ export default class Navigator extends Component {
     OneSignal.setLocationShared(false);
     OneSignal.setLogLevel(6, 0);
     this.setup();
-    console.log(id, 'OneSignal');
   }
 
   async setup() {
@@ -99,7 +96,6 @@ export default class Navigator extends Component {
         this.setInitialLanguage();
       });
     } catch (error) {
-      console.log(error);
       Sentry.captureMessage(error);
       Alert.alert(strings.error, strings.errorMsg);
     }
@@ -110,24 +106,24 @@ export default class Navigator extends Component {
     //OneSignal.setInAppMessageClickHandler(this.onOpened);
     //OneSignal.addEventListener('ids', this.onIds);
     OneSignal.promptForPushNotificationsWithUserResponse(response => {
-      console.log('Prompt response:', response);
+      // console.log('Prompt response:', response);
     });
     OneSignal.setNotificationWillShowInForegroundHandler(
       notificationReceivedEvent => {
-        console.log(
-          'OneSignal: notification will show in foreground:',
-          notificationReceivedEvent,
-        );
+        // console.log(
+        //   'OneSignal: notification will show in foreground:',
+        //   notificationReceivedEvent,
+        // );
         let notification = notificationReceivedEvent.getNotification();
-        console.log('notification: ', notification);
+        //console.log('notification: ', notification);
         const data = notification.additionalData;
-        console.log('additionalData: ', data);
+        //console.log('additionalData: ', data);
         // Complete with null means don't show a notification.
         notificationReceivedEvent.complete(notification);
       },
     );
     OneSignal.setNotificationOpenedHandler(notification => {
-      console.log('OneSignal: notification opened:', notification);
+      //console.log('OneSignal: notification opened:', notification);
     });
   }
 

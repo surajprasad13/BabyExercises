@@ -16,7 +16,7 @@ export default class Loading extends Component {
         colors={['rgb(199,129,156)', 'rgb(129,206,219)']}
         start={{x: 0, y: 0}}
         end={{x: 0, y: 1}}
-        style={{flex: 1, padding: 20}}>
+        style={{flex: 1}}>
         <ActivityIndicator />
       </LinearGradient>
       // </RadialGradient>

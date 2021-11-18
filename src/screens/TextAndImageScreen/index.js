@@ -1,6 +1,12 @@
 import styles from './styles';
 import React, {Component} from 'react';
-import {View, Image, ActivityIndicator, Platform} from 'react-native';
+import {
+  View,
+  Image,
+  ActivityIndicator,
+  Platform,
+  Dimensions,
+} from 'react-native';
 
 //import RadialGradient from 'react-native-radial-gradient';
 import MenuDrawer from '@components/MenuDrawer';
@@ -112,6 +118,7 @@ class TextAndImageScreen extends Component {
               colors={['rgb(199,129,156)', 'rgb(129,206,219)']}
               start={{x: 0, y: 0}}
               end={{x: 0, y: 1}}
+              minHeight={Dimensions.get('window').height}
               style={styles.contentContainer}>
               <TriggeringView
               // onHide={() => this.navTitleView.fadeInUp(200)}

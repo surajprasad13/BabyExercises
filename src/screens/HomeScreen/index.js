@@ -65,7 +65,7 @@ class HomeScreen extends Component {
     strings.setLanguage(
       CommonDataManager.getInstance().getSelectedLanguage().iso,
     );
-    console.log('TEST');
+
     try {
       Data.getCategories(
         CommonDataManager.getInstance().getSelectedLanguage().iso,

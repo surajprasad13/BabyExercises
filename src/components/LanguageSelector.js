@@ -54,6 +54,7 @@ export default class LanguageSelector extends Component {
    */
   async UNSAFE_componentWillMount() {
     try {
+      console.log('This is calling');
       //Get languages
       let selected = JSON.parse(await AsyncStorage.getItem('SelectedLanguage'));
       Data.getLanguages().then(data => {
@@ -112,9 +113,9 @@ export default class LanguageSelector extends Component {
    * @param {any} data
    * @memberof LanguageSelector
    */
-  onLanguageSelect(idx, data) {
+  async onLanguageSelect(idx, data) {
     try {
-      AsyncStorage.setItem('SelectedLanguage', JSON.stringify(data));
+      await AsyncStorage.setItem('SelectedLanguage', JSON.stringify(data));
       strings.setLanguage(data.iso);
       CommonDataManager.getInstance().setSelectedLanguage(data);
       OneSignal.sendTag('lang', data.iso);
@@ -150,7 +151,7 @@ export default class LanguageSelector extends Component {
    */
   renderLanguageRow(rowData, rowID, highlighted) {
     return (
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => this.onLanguageSelect(rowID, rowData)}>
         <View style={styles.row}>
           <Image
             source={{uri: Config.URL + rowData.image}}
