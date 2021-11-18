@@ -5874,6 +5874,11 @@ react-native-easy-toast@^2.0.0:
   dependencies:
     prop-types "^15.5.10"
 
+react-native-fast-image@^8.5.11:
+  version "8.5.11"
+  resolved "https://registry.yarnpkg.com/react-native-fast-image/-/react-native-fast-image-8.5.11.tgz#e3dc969d0e4e8df026646bf18194465aa55cbc2b"
+  integrity sha512-cNW4bIJg3nvKaheG8vGMfqCt5LMWX9MS5+wMudgKIHbGO51spRr4sgnlhVgwHLcZ5aeNOVJ8CPRxDIWKRq/0QA==
+
 react-native-fullscreen-video@^0.0.9:
   version "0.0.9"
   resolved "https://registry.yarnpkg.com/react-native-fullscreen-video/-/react-native-fullscreen-video-0.0.9.tgz#752a10e4baed75bb6baf7fa87b655ba170de3e28"

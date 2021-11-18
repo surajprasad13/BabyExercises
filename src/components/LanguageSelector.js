@@ -54,7 +54,6 @@ export default class LanguageSelector extends Component {
    */
   async UNSAFE_componentWillMount() {
     try {
-      console.log('This is calling');
       //Get languages
       let selected = JSON.parse(await AsyncStorage.getItem('SelectedLanguage'));
       Data.getLanguages().then(data => {

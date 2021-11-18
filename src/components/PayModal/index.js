@@ -240,32 +240,24 @@ class PayModal extends Component {
    * @memberof PayModal
    */
   async buyProduct(id) {
-    // OneSignal.sendTags({have_paid: 'true', last_item: id});
-    // RNIap.getProducts(id)
-    //   .then(purchase => {
-    //     Toast.show(strings.successBuy, Toast.LONG);
-    //     Sentry.captureMessage('Bought:');
-    //     Sentry.captureMessage(JSON.stringify(purchase));
-    //     Sentry.captureMessage(id);
-    //     this.setNewPurchase(id);
-    //     this.reloadScreen();
-    //   })
-    //   .catch(err => {
-    //     if (err.code != 'E_USER_CANCELLED') {
-    //       Alert.alert(strings.error, strings.unableToBuyText);
-    //       Sentry.captureMessage(err);
-    //     }
-    //   });
-    // const product = await RNIap.getProducts(id);
-    // console.log(product);
-
     try {
       await RNIap.requestPurchase(id)
-        .then(data => console.log(data))
+        .then(data => {
+          OneSignal.sendTags({have_paid: 'true', last_item: id});
+          Toast.show(strings.successBuy, Toast.LONG);
+          Sentry.captureMessage('Bought:');
+          Sentry.captureMessage(JSON.stringify(purchase));
+          Sentry.captureMessage(id);
+          this.setNewPurchase(id);
+          this.reloadScreen();
+        })
         .catch(error => {
-          console.log(error);
+          Alert.alert(strings.error, strings.unableToBuyText);
+          Sentry.captureMessage(error);
         });
     } catch (error) {
+      //Alert.alert(strings.error, strings.unableToBuyText);
+      Sentry.captureMessage(error);
       console.log(error);
     }
   }
