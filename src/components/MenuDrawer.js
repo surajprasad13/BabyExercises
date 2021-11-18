@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {StyleSheet} from 'react-native';
 import {withNavigation} from 'react-navigation';
 import Drawer from 'react-native-drawer';
 import Menu from './Menu';

@@ -16,7 +16,6 @@ import strings from '@config/strings';
 import Config from '@config/Config';
 import OneSignal from 'react-native-onesignal';
 import * as Sentry from '@sentry/react-native';
-import Events from '@library/events';
 
 const styles = StyleSheet.create({
   row: {
