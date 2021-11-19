@@ -144,7 +144,7 @@ android {
         applicationId "dat1.videoplatform.android.babyapp"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 49
+        versionCode 50
         versionName "3.0.0"
         missingDimensionStrategy 'store', 'play'
     }
@@ -158,10 +158,10 @@ android {
     }
     signingConfigs {
         debug {
-            storeFile file('debug.keystore')
-            storePassword 'android'
-            keyAlias 'androiddebugkey'
-            keyPassword 'android'
+            storeFile file('../keystores/my-keystore.jks')
+            storePassword '123456'
+            keyAlias 'key0'
+            keyPassword '123456'
         }
         release {
             if (project.hasProperty('MYAPP_UPLOAD_STORE_FILE')) {

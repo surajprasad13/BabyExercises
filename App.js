@@ -109,10 +109,6 @@ export default class Navigator extends Component {
     });
     OneSignal.setNotificationWillShowInForegroundHandler(
       notificationReceivedEvent => {
-        // console.log(
-        //   'OneSignal: notification will show in foreground:',
-        //   notificationReceivedEvent,
-        // );
         let notification = notificationReceivedEvent.getNotification();
         //console.log('notification: ', notification);
         //console.log('additionalData: ', data);
