@@ -144,8 +144,8 @@ android {
         applicationId "dat1.videoplatform.android.babyapp"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 51
-        versionName "3.0.0"
+        versionCode 52
+        versionName "3.0.1"
         missingDimensionStrategy 'store', 'play'
     }
     splits {
