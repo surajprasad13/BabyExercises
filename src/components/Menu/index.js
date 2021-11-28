@@ -56,7 +56,7 @@ class Menu extends React.Component {
       <LinearGradient
         colors={['rgba(134,194,211,0.8)', 'rgba(48,86,108, 0.8)']}
         style={styles.container}>
-        <ScrollView scrollIndicatorInsets={{right: 1}}>
+        <ScrollView>
           <View style={styles.closeButton}>
             <TouchableWithoutFeedback onPress={this.props.closeDrawer}>
               <Image

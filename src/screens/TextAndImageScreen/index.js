@@ -76,7 +76,7 @@ class TextAndImageScreen extends Component {
           <HeaderImageScrollView
             scrollIndicatorInsets={{right: 1}}
             maxHeight={isTablet ? 500 : 250}
-            minHeight={Platform.OS === 'ios' ? 80 : 60}
+            minHeight={Platform.OS === 'ios' ? 100 : 80}
             maxOverlayOpacity={1}
             overlayColor="rgb(129,206,219)"
             fadeOutForeground
@@ -88,31 +88,12 @@ class TextAndImageScreen extends Component {
             )}
             renderTouchableFixedForeground={() => (
               <Header openDrawer={this.openDrawer.bind(this)} />
-              // <View style={{ padding: 10 }}>
-
-              //   <Animatable.View pointerEvents={'none'}
-              //     style={styles.navTitleView}
-              //     ref={navTitleView => {
-              //       this.navTitleView = navTitleView;
-              //     }}>
-              //     <Text style={styles.navTitle}>
-              //       {this.props.navigation.state.params.itemInfo.title}
-              //     </Text>
-              //   </Animatable.View>
-
-              // </View>
             )}
             renderForeground={() => (
               <View style={styles.titleContainer}>
                 {/* <Text style={styles.imageTitle}>    {this.state.page.title}</Text> */}
               </View>
             )}>
-            {/* <RadialGradient
-              style={styles.contentContainer}
-              colors={['rgb(199,129,156)', 'rgb(129,206,219)']}
-              center={[0, 0]}
-              minHeight={Dimensions.get('window').height}
-              radius={500}> */}
             <LinearGradient
               colors={['rgb(199,129,156)', 'rgb(129,206,219)']}
               start={{x: 0, y: 0}}
@@ -154,7 +135,6 @@ class TextAndImageScreen extends Component {
                   </View>,
                 )}
               </View>
-              {/* </RadialGradient> */}
             </LinearGradient>
           </HeaderImageScrollView>
         </View>
