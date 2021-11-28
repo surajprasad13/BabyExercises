@@ -4,6 +4,7 @@ export default {
     padding: 20,
     height: 75,
     backgroundColor: 'transparent',
+    marginBottom: 20,
   },
   innerContainer: {
     flex: 1,
