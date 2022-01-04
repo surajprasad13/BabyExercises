@@ -243,6 +243,9 @@ class PayModal extends Component {
     try {
       await RNIap.requestPurchase(id)
         .then(data => {
+          this.acknowledgeProduct(data.purchaseToken);
+          this.finishPurchase(data);
+          //this.validateReceipt(data);
           OneSignal.sendTags({have_paid: 'true', last_item: id});
           Toast.show(strings.successBuy, Toast.LONG);
           Sentry.captureMessage('Bought:');
@@ -277,6 +280,40 @@ class PayModal extends Component {
     AsyncStorage.setItem('Purchases', JSON.stringify(all));
     this.setState({own: all});
     this.reloadScreen();
+  }
+
+  async validateReceipt(data) {
+    RNIap.validateReceiptAndroid(
+      data.packageNameAndroid,
+      data.productId,
+      data.purchaseToken,
+    )
+      .then(data => {
+        console.log(data, 'receipt data');
+      })
+      .catch(error => {
+        console.log(error, 'Error in validating receipt');
+      });
+  }
+
+  async finishPurchase(data) {
+    await RNIap.finishTransaction(data, true)
+      .then(data => {
+        console.log(data, 'finish transaction');
+      })
+      .catch(error => {
+        console.log(error, 'finish error');
+      });
+  }
+
+  async acknowledgeProduct(data) {
+    await RNIap.acknowledgePurchaseAndroid(data)
+      .then(data => {
+        console.log(data, 'acknowledge');
+      })
+      .catch(error => {
+        console.log(error, 'acknowldege error');
+      });
   }
 }
 export default withNavigationFocus(PayModal);
