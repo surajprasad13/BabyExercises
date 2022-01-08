@@ -261,7 +261,6 @@ class PayModal extends Component {
     } catch (error) {
       //Alert.alert(strings.error, strings.unableToBuyText);
       Sentry.captureMessage(error);
-      console.log(error);
     }
   }
   /**
